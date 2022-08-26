@@ -1,0 +1,184 @@
+body {
+  position: relative;
+}
+header h1 {
+  text-align: center;
+  font-size: 48px;
+  margin: 80px 0 40px 0;
+  color: #0acbb3;
+  padding: 10px auto;
+}
+label,
+.other-cities {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.other-cities {
+  position: relative;
+  left: -10px;
+}
+section {
+  margin: 70px auto;
+}
+ul {
+  list-style: none;
+  position: relative;
+  left: 106px;
+}
+input.form-control {
+  border-radius: 20px;
+  border: 1px solid #0acbb3;
+  font-size: 16px;
+  color: white;
+  background-color: white;
+}
+input#basic-addon2 {
+  background-color: #0acbb3;
+  color: white;
+  font-weight: bold;
+  border: 5px solid #0acbb3;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+}
+button {
+  background-color: #0acbb3;
+  color: white;
+  font-weight: bold;
+  border: 5px solid #0acbb3;
+  border-radius: 8px;
+  padding: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  text-align: right;
+  position: relative;
+  left: 1127px;
+}
+div.col-4 {
+  font-weight: 300;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.card.mb-3,
+div .card {
+  border: 3px solid #0acbb3;
+}
+p.card-text {
+  text-align: center;
+  font-weight: 700;
+}
+li .card-text {
+  text-align: left;
+  margin: 0px 0px 0px 25px;
+}
+li .card-text,
+.day-max,
+.day-min {
+  margin: 0px 0px 0px 25px;
+  text-align: left;
+}
+.nextdays img {
+  margin: 10px 10px 0px -60px;
+}
+.md-3 img {
+  width: 30%;
+  padding: 0 auto;
+  position: relative;
+  margin: 0px 0px 0px 100px;
+  text-align: center;
+}
+div.col.hourly {
+  margin: 10px auto 90px auto;
+}
+.md-6 img {
+  width: 80%;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  margin: 0px 0px 0px 70px;
+}
+div.md-6 {
+  position: relative;
+  font-weight: 700;
+  margin: 0px 0px -20px 0px;
+  padding: 0px 0px;
+}
+div.md-6 .col {
+  text-align: center;
+  margin: -19px -28px 8px auto;
+}
+.footer-image {
+  position: relative;
+  left: 15px;
+}
+div.md-6 .card-text {
+  margin: 11px auto -20px auto;
+}
+div.card.mb-3 p.other-city-temp {
+  font-weight: 400;
+  text-align: center;
+  margin: 10px 30px 0px 0px;
+}
+div.card.mb-3 .footer-image {
+  margin: 0 50px 0px 40px;
+}
+.current-temp,
+.real-feel {
+  text-align: left;
+  margin: auto 0px auto 220px;
+  font-size: 20px;
+}
+.current-temp {
+  font-weight: bold;
+}
+img .current-icon {
+  margin: -10px auto -40px auto;
+  padding: auto auto -20px auto;
+}
+.current-city {
+  text-align: left;
+  padding: 0px;
+  margin: -2px auto auto 2px;
+  font-size: 18px;
+}
+.current-date {
+  text-align: right;
+  padding: 0px;
+  margin: -22px -35px auto -15px;
+  font-size: 18px;
+}
+.current-hour {
+  text-align: right;
+  padding: 0px;
+  margin: 3px -35px auto -15px;
+  font-size: 18px;
+}
+.current-humidity {
+  text-align: right;
+  padding: 0px;
+  margin: -50px -35px auto -15px;
+  font-size: 18px;
+}
+.current-precipitation,
+.current-wind {
+  text-align: right;
+  padding: 0px;
+  margin: 3px -35px auto -15px;
+  font-size: 18px;
+}
+.current-wind {
+  margin: 3px -35px 40px 40px;
+}
+.current-max {
+  text-align: left;
+  padding: 0px;
+  margin: 40px auto auto 2px;
+  font-size: 18px;
+}
+.current-min {
+  text-align: left;
+  padding: 0px;
+  margin: 3px auto auto 2px;
+  font-size: 18px;
+}

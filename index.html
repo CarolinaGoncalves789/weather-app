@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>🌎World Weather</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>The World Weather</h1>
+      </header>
+      <form id="search-form">
+        <div class="input-group mb-3">
+          <label for="search">City: </label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Type city's name here "
+            id="search-form-input"
+          />
+          <input
+            type="submit"
+            value="Check weather"
+            class="input-group-text"
+            id="basic-addon2"
+          />
+        </div>
+      </form>
+      <button id="current-button">Current Location</button>
+      <section>
+        <div class="container-fluid">
+          <div class="container text-center">
+            <div class="row">
+              <div class="row">
+                <div class="col-8">
+                  <p class="current-city" id="current-city">
+                    Weather in Porto:
+                  </p>
+                  <p class="current-date" id="today">25 July 2022</p>
+                  <p class="current-hour" id="time">20:10</p>
+                  <img
+                    src="media/sunny.png"
+                    width="300px"
+                    class="current-icon"
+                  />
+                  <p class="current-temp">
+                    Current temperature: <span id="current-temp">26</span>
+                    <a href="#" id="temp-c">ºC</a> /
+                    <a href="#" id="temp-f">ºF</a>
+                  </p>
+                  <p class="real-feel">
+                    Real feel: <span id="real-feel"> 28</span> ºC
+                  </p>
+                  <p class="current-max">Max: 30 ºC</p>
+                  <p class="current-min">Min: 10ºC</p>
+                  <p class="current-humidity">Humidity: 48%</p>
+                  <p class="current-precipitation">Precipitation: 3%</p>
+                  <p class="current-wind">Wind NW: 18km/h</p>
+                </div>
+                <div class="col-4">
+                  <ul>
+                    <li class="nextdays">
+                      <div class="card mb-3" style="max-width: 300px">
+                        <div class="row g-0">
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-text">Tomorrow</p>
+                              <p class="day-max">Max. 28 ºC</p>
+                              <p class="day-min">Min. 11 ºC</p>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <img
+                              src="media/sunny.png"
+                              class="img-fluid rounded-start"
+                              alt="..."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nextdays">
+                      <div class="card mb-3" style="max-width: 300px">
+                        <div class="row g-0">
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-text">27th July</p>
+                              <p class="day-max">Max. 26 ºC</p>
+                              <p class="day-min">Min. 12 ºC</p>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <img
+                              src="media/sun-fog.png"
+                              class="img-fluid rounded-start"
+                              alt="..."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nextdays">
+                      <div class="card mb-3" style="max-width: 300px">
+                        <div class="row g-0">
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-text">28th July</p>
+                              <p class="day-max">Max. 22 ºC</p>
+                              <p class="day-min">Min. 10 ºC</p>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <img
+                              src="media/sunny-cloud.png"
+                              class="img-fluid rounded-start"
+                              alt="..."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nextdays">
+                      <div class="card mb-3" style="max-width: 300px">
+                        <div class="row g-0">
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-text">29th July</p>
+                              <p class="day-max">Max. 21 ºC</p>
+                              <p class="day-min">Min. 11 ºC</p>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <img
+                              src="media/cloudy.png"
+                              class="img-fluid rounded-start"
+                              alt="..."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col" class="hourly">
+                <div class="card" style="width: 100px">
+                  <div class="card-body">
+                    <p class="card-text">16:00</p>
+                  </div>
+                  <img src="media/showers.png" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">22 ºC</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" class="hourly">
+                <div class="card" style="width: 100px">
+                  <div class="card-body">
+                    <p class="card-text">18:00</p>
+                  </div>
+                  <img src="media/showers.png" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">20 ºC</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" class="hourly">
+                <div class="card" style="width: 100px">
+                  <div class="card-body">
+                    <p class="card-text">19:00</p>
+                  </div>
+                  <img src="media/rain.png" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">20 ºC</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" class="hourly">
+                <div class="card" style="width: 100px">
+                  <div class="card-body">
+                    <p class="card-text">20:00</p>
+                  </div>
+                  <img
+                    src="media/rain-strong.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <p class="card-text">18 ºC</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" class="hourly">
+                <div class="card" style="width: 100px">
+                  <div class="card-body">
+                    <p class="card-text">21:00</p>
+                  </div>
+                  <img
+                    src="media/night-foggy.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <p class="card-text">15 ºC</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" class="hourly">
+                <div class="card" style="width: 100px">
+                  <div class="card-body">
+                    <p class="card-text">22:00</p>
+                  </div>
+                  <img
+                    src="media/night-cloudy.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <p class="card-text">15 ºC</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col"></div>
+              <div class="col"></div>
+              <div class="col"></div>
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col md-3">
+              <div class="card" style="width: 18rem">
+                <div class="card-body">
+                  <p class="card-text">Sunrise</p>
+                </div>
+                <img src="media/sunrise.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <p class="card-text">07:00</p>
+                </div>
+              </div>
+            </div>
+            <div class="col md-3">
+              <div class="card" style="width: 18rem">
+                <div class="card-body">
+                  <p class="card-text">Sunset</p>
+                </div>
+                <img src="media/night.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <p class="card-text">22:00</p>
+                </div>
+              </div>
+            </div>
+            <div class="col md-6">
+              <div class="card" style="width: 36rem">
+                <div class="card-body">
+                  <p class="card-text">Tides</p>
+                </div>
+                <img src="media/tides.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col" class="tide-hour">01:37</div>
+                    <div class="col" class="tide-hour">07:41</div>
+                    <div class="col" class="tide-hour">14:01</div>
+                    <div class="col" class="tide-hour">20:16</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="other-cities">Current weather in other cities:</div>
+      <br />
+      <div class="row">
+        <div class="col-4" class="city-name">
+          New York, USA
+          <div class="card mb-3 city1" style="max-width: 300px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="media/sun-fog.png"
+                  class="img-fluid rounded-start footer-image"
+                  alt="..."
+                  width="75px"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text other-city-temp">18ºC</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4" class="city-name">
+          London, UK
+          <div class="card mb-3" style="max-width: 300px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="media/sun-rain.png"
+                  class="img-fluid rounded-start footer-image"
+                  alt="..."
+                  width="75px"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text other-city-temp">26ºC</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4" class="city-name">
+          Tokyo, Japan
+          <div class="card mb-3" style="max-width: 300px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="media/sunny.png"
+                  class="img-fluid rounded-start footer-image"
+                  alt="..."
+                  width="75px"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text other-city-temp">21ºC</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
