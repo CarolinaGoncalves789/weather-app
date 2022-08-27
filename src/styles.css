@@ -55,6 +55,12 @@ button {
   position: relative;
   left: 1127px;
 }
+.open-source {
+  text-align: center;
+  padding: 10px;
+  margin: 20px auto;
+}
+
 div.col-4 {
   font-weight: 300;
   font-size: 16px;
